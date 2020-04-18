@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Here are the users name</h1>
+<div class="django_users">
+    {% if users %}
+     <ol>
+        {% for acc in users %}
+
+        <li>User info:</li>
+        <ul>
+        <LI>First name: {{acc.first_name}}</LI>
+        <LI>Last name: {{acc.last_name}}</LI>
+        <LI>Email: {{acc.email}}</LI>
+        </ul>
+
+        {% endfor %}
+     </ol>
+
+    {% else %}
+    <p>NO ACCESS RECORDS FOUND!</p>
+    {% endif %}
+</div>
+</body>
+</html>
